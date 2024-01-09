@@ -3,11 +3,6 @@ import LoginForm from './Login';
 
 const Tabs = ({ isLoggedIn, setIsLoggedIn, setActivePage }) => {
 
-    function handleLogIn() {
-        setActivePage('login')
-        isLoggedIn && setActivePage('home')
-    }
-
     return (
         <nav className="flex gap-4 w-full justify-between p-4 bg-gray-200" >
             <ul className='flex justify-end ml-32 gap-4 w-1/2'>
@@ -23,7 +18,7 @@ const Tabs = ({ isLoggedIn, setIsLoggedIn, setActivePage }) => {
                 setIsLoggedIn(false);
                 setActivePage('home');
             }}>LogOut</button>
-                : <button className='mr-10' onClick={handleLogIn}>LogIn</button>
+                : <button className='mr-10' onClick={()=> setActivePage('login')}>LogIn</button>
             }
         </nav>
     )

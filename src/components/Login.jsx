@@ -2,7 +2,7 @@ import { useState } from "react";
 import Tabs from "./Tabs";
 import Home from "./Home";
 
-function LoginForm({ isLoggedIn, setIsLoggedIn }) {
+function LoginForm({ isLoggedIn, setIsLoggedIn, setActivePage }) {
 
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
@@ -36,6 +36,7 @@ function LoginForm({ isLoggedIn, setIsLoggedIn }) {
         } else {
             alert('login');
             setIsLoggedIn(true);
+            setActivePage('home')
         }
     }
 
